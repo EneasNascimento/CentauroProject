@@ -1,2 +1,2 @@
 # CentauroProject
-Automation Tests Cases
+Automação dos casos de testes do projeto Centauro.
