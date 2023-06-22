@@ -1,0 +1,17 @@
+package elementos;
+
+import org.openqa.selenium.By;
+
+public class Elementos {
+	
+	public By btnNaoObrigado = By.xpath("//button[text()='Não, obrigado']");
+	public By btnFecharOfertas = By.xpath("//*[@id=\"Layer_1\"]");
+	public By btnRejeitarCookies = By.xpath("//button[text()='Rejeitar']");
+	public By submenuAdidas = By.xpath("//a[@href='/nav/marca/adidas']");
+	public By menuMarcas = By.xpath("//a[text()='Marcas']");
+	public By caixaSelecaoAdidas = By.xpath("//span[text()='adidas']");
+	public By textoSubmenu = By.xpath("//div[@class='_1yqlgpm']/span[text()='Principais Marcas']");
+	
+	public String urlMarcaAdidas = "https://www.centauro.com.br/nav/marca/adidas/?page=1";
+	public String textoListaSubmenu = "PRINCIPAIS MARCAS";
+}
