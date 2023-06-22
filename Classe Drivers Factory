@@ -1,0 +1,10 @@
+package driver;
+
+import org.openqa.selenium.WebDriver;
+
+//Criando o objeto driver para a classe WebDriver do Selenium, onde utilizaremos para interagir com os elementos Web.
+public class DriversFactory {
+	
+	public static WebDriver driver;
+
+}
