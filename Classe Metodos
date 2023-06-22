@@ -38,7 +38,7 @@ public class Metodos extends DriversFactory {
 		driver.findElement(elemento).click();
 	}
 
-	public void fecharNavegadir() {
+	public void fecharNavegador() {
 		driver.quit();
 	}
 
