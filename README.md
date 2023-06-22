@@ -1,2 +1,2 @@
 # Centauro Project
-Automação dos casos de testes do projeto Centauro.
+Automação dos casos de testes regressivos do projeto Centauro.
