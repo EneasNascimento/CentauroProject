@@ -1,0 +1,59 @@
+package runner;
+
+import org.junit.Before;
+import org.junit.Test;
+import elementos.Elementos;
+import metodos.Metodos;
+
+public class ExecutaMetodos {
+	
+	Metodos metodos = new Metodos();
+	Elementos el = new Elementos();
+	
+	
+	@Before
+	public void abrirNavegador() {
+		metodos.abrirNavegador("https://www.centauro.com.br/");	
+	}
+	
+	@Test
+	// validar filtro do menu marcas escolhendo a marca Adidas
+	public void filtroAdidasMenuMarcas() throws InterruptedException {
+		String urlFiltroAdidas = "https://www.centauro.com.br/nav/marca/adidas/?page=1";
+		
+		metodos.esperarClicar(el.btnNaoObrigado,10);
+		metodos.esperarClicar(el.btnFecharOfertas,10);
+		metodos.esperarClicar(el.btnRejeitarCookies,10);
+		metodos.clicar(el.menuMarcas);
+		Thread.sleep(1000);
+		metodos.clicar(el.caixaSelecaoAdidas);
+		metodos.validarUrl(urlFiltroAdidas);
+		metodos.fecharNavegadir();
+	}
+	
+	@Test
+	// Validar carregamento da lista de submenus do menu Marca
+	public void validarListaSubmenus() throws InterruptedException {
+		metodos.esperarClicar(el.btnFecharOfertas, 10);
+		metodos.esperarClicar(el.btnNaoObrigado, 10);
+		metodos.esperarClicar(el.btnRejeitarCookies, 10);
+		metodos.mouseOver(el.menuMarcas);
+		Thread.sleep(1000);
+		metodos.validarTexto(el.textoListaSubmenu, el.textoSubmenu);
+		metodos.fecharNavegadir();
+	}
+	
+	@Test
+	// validar redirecionamento do submenu Adidas do menu Marcas
+	public void validarSubmenuAdidas() {
+		String urlSubmenuAdidas = "https://www.centauro.com.br/nav/marca/adidas";
+		metodos.esperarClicar(el.btnNaoObrigado,10);
+		metodos.esperarClicar(el.btnFecharOfertas,10);
+		metodos.esperarClicar(el.btnRejeitarCookies,10);
+		metodos.mouseOver(el.menuMarcas);
+		metodos.clicar(el.submenuAdidas);
+		metodos.validarUrl(urlSubmenuAdidas);
+		metodos.fecharNavegadir();
+	}
+	
+}
