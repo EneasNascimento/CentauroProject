@@ -28,7 +28,6 @@ public class ExecutaMetodos {
 		Thread.sleep(1000);
 		metodos.clicar(el.caixaSelecaoAdidas);
 		metodos.validarUrl(urlFiltroAdidas);
-		metodos.fecharNavegador();
 	}
 	
 	@Test
@@ -40,7 +39,6 @@ public class ExecutaMetodos {
 		metodos.mouseOver(el.menuMarcas);
 		Thread.sleep(1000);
 		metodos.validarTexto(el.textoListaSubmenu, el.textoSubmenu);
-		metodos.fecharNavegador();
 	}
 	
 	@Test
@@ -53,6 +51,10 @@ public class ExecutaMetodos {
 		metodos.mouseOver(el.menuMarcas);
 		metodos.clicar(el.submenuAdidas);
 		metodos.validarUrl(urlSubmenuAdidas);
+	}
+
+	@After
+	public void fecharNavegador() {
 		metodos.fecharNavegador();
 	}
 	
