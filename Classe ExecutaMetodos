@@ -17,23 +17,9 @@ public class ExecutaMetodos {
 	}
 	
 	@Test
-	// validar filtro do menu marcas escolhendo a marca Adidas
-	public void filtroAdidasMenuMarcas() throws InterruptedException {
-		String urlFiltroAdidas = "https://www.centauro.com.br/nav/marca/adidas/?page=1";
-		
-		metodos.esperarClicar(el.btnNaoObrigado,10);
-		metodos.esperarClicar(el.btnFecharOfertas,10);
-		metodos.esperarClicar(el.btnRejeitarCookies,10);
-		metodos.clicar(el.menuMarcas);
-		Thread.sleep(1000);
-		metodos.clicar(el.caixaSelecaoAdidas);
-		metodos.validarUrl(urlFiltroAdidas);
-	}
-	
-	@Test
-	// Validar carregamento da lista de submenus do menu Marca
+	// Scenario-01 Validar carregamento da lista de submenus do menu Marca
 	public void validarListaSubmenus() throws InterruptedException {
-		metodos.esperarClicar(el.btnFecharOfertas, 10);
+		//metodos.esperarClicar(el.btnFecharOfertas, 10);
 		metodos.esperarClicar(el.btnNaoObrigado, 10);
 		metodos.esperarClicar(el.btnRejeitarCookies, 10);
 		metodos.mouseOver(el.menuMarcas);
@@ -42,15 +28,69 @@ public class ExecutaMetodos {
 	}
 	
 	@Test
-	// validar redirecionamento do submenu Adidas do menu Marcas
+	//Scenario-02 validar redirecionamento do submenu Adidas do menu Marcas
 	public void validarSubmenuAdidas() {
 		String urlSubmenuAdidas = "https://www.centauro.com.br/nav/marca/adidas";
 		metodos.esperarClicar(el.btnNaoObrigado,10);
-		metodos.esperarClicar(el.btnFecharOfertas,10);
+		//metodos.esperarClicar(el.btnFecharOfertas,10);
 		metodos.esperarClicar(el.btnRejeitarCookies,10);
 		metodos.mouseOver(el.menuMarcas);
 		metodos.clicar(el.submenuAdidas);
 		metodos.validarUrl(urlSubmenuAdidas);
+	}
+	
+	@Test
+	//Scenario-03 validar redirecionamento do submenu NBA do menu Marcas
+	public void validarSubmenuNBA() throws InterruptedException {
+		String urlSubmenuNba = "https://www.centauro.com.br/nav/marca/nba";
+		metodos.esperarClicar(el.btnNaoObrigado,10);
+		//metodos.esperarClicar(el.btnFecharOfertas,10);
+		metodos.esperarClicar(el.btnRejeitarCookies,10);
+		metodos.mouseOver(el.menuMarcas);
+		Thread.sleep(1000);
+		metodos.clicar(el.submenuNba);
+		metodos.validarUrl(urlSubmenuNba);
+	}
+	
+	@Test
+	//Scenario-04 validar redirecionamento do link do logo NIKE
+	public void validarLogoNike() throws InterruptedException {
+		String urlLogoNike = "https://www.centauro.com.br/nav/marca/nike";
+		metodos.esperarClicar(el.btnNaoObrigado,10);
+		//metodos.esperarClicar(el.btnFecharOfertas,10);
+		metodos.esperarClicar(el.btnRejeitarCookies,10);
+		metodos.mouseOver(el.menuMarcas);
+		Thread.sleep(1000);
+		metodos.clicar(el.logoNike);
+		metodos.validarUrl(urlLogoNike);
+	}
+	
+	@Test
+	//Scenario-05 validar redirecionamento do link do logo MIZUNO
+	public void validarLogoMizuno() throws InterruptedException {
+		String urlLogoMizuno = "https://www.centauro.com.br/nav/marca/mizuno";
+		metodos.esperarClicar(el.btnNaoObrigado,10);
+		//metodos.esperarClicar(el.btnFecharOfertas,10);
+		metodos.esperarClicar(el.btnRejeitarCookies,10);
+		metodos.mouseOver(el.menuMarcas);
+		Thread.sleep(1000);
+		metodos.clicar(el.logoMizuno);
+		metodos.validarUrl(urlLogoMizuno);
+	}
+	
+	
+	@Test
+	// Scenario-06 validar filtro do menu marcas escolhendo a marca Adidas
+	public void filtroAdidasMenuMarcas() throws InterruptedException {
+		String urlFiltroAdidas = "https://www.centauro.com.br/nav/marca/adidas/?page=1";
+		
+		metodos.esperarClicar(el.btnNaoObrigado,10);
+		//metodos.esperarClicar(el.btnFecharOfertas,10);
+		metodos.esperarClicar(el.btnRejeitarCookies,10);
+		metodos.clicar(el.menuMarcas);
+		Thread.sleep(1000);
+		metodos.clicar(el.caixaSelecaoAdidas);
+		metodos.validarUrl(urlFiltroAdidas);
 	}
 
 	@After
